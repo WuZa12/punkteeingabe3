@@ -1,0 +1,14 @@
+﻿{% extends "templateHome.html" %}
+{% block content %}
+	<h1>Willkommen</h1>
+	<p class="text-primary">punkteeingabe</p>
+	<div class="container-fluid">
+	<div class="col-xs-12">
+	<form class="button-nebendran" title="Klausuren" action="/alleNoten" method="POST">
+		<button type="submit" class="btn btn-lg btn-success">
+			<i class="glyphicon glyphicon-eye-open"></i>
+			Noten
+	</form>
+	</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "template.html" %}
+{% block content %}
+    {% if error %}
+        <p><strong>Error:</strong> {{ error }}
+	{% endif %}
+<form action="/eingabe" method="POST">
+	<dl>
+        <dt><h2>ID: - wird noch automatisiert</h2></dt>
+		<dd>
+			<input type="text" maxlength="6" class="form-control" name="id" placeholder="0" value="{{ request.form.id }}">
+		</dd>
+		<dt><h2>Klausur Nr:</h2></dt>
+		<dd>
+			<input type="text" class="form-control" name="klausur" value="{{ request.form.klausur }}">
+		</dd>
+		
+		<dt><h2>Matrikel Nr.:</h2></dt>
+		<dd>
+			<input type="text" class="form-control" name="matrikel" value="{{ request.form.matrikel }}">
+		</dd>
+		
+		<dt><h2>Punkte Frage1:</h2></dt>
+		<dd>
+			<input type="text" maxlength="1" class="form-control" name="punktef1" placeholder="0" value="{{ request.form.punktef1 }}">
+		</dd>
+        <dt><h2>Punkte Frage2:</h2></dt>
+		<dd>
+			<input type="text" maxlength="1" class="form-control" name="punktef2" placeholder="0" value="{{ request.form.punktef2 }}">
+		</dd>
+        <dt><h2>Punkte Frage3:</h2></dt>
+		<dd>
+			<input type="text" maxlength="1" class="form-control" name="punktef3" placeholder="0" value="{{ request.form.punktef3 }}">
+		</dd>
+        <dt><h2>Punkte Frage4:</h2></dt>
+		<dd>
+			<input type="text" maxlength="1" class="form-control" name="punktef4" placeholder="0" value="{{ request.form.punktef4 }}">
+		</dd>
+        <dt><h2>Punkte Frage5:</h2></dt>
+		<dd>
+			<input type="text" maxlength="1" class="form-control" name="punktef5" placeholder="0" value="{{ request.form.punktef5 }}">
+		</dd>
+	</dl>
+	<input type="submit" class="btn btn-lg btn-success" value="Eingeben">
+</form>
+{% endblock %}

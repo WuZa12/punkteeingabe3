@@ -1,0 +1,41 @@
+{% extends "template.html" %}
+{% block content %}
+	<h1>Anmeldungen</h1>
+	<form action="/anzeigen" method="POST">
+	<input type="hidden" name="id" value="{{ request.form.id }}">
+	</form>
+	{% if noten %}
+		<div class="table-responsive">
+			<table id="table1" class="display">
+				<thead>
+					<th>id</th>
+					<th>Matrikelnummer</th>
+					<th>Klausur</th>
+                	<th>Frage 1</th>
+                    <th>Frage 2</th>
+                	<th>Frage 3</th>
+                	<th>Frage 4</th>
+                	<th>Frage 5</th>
+
+				</thead>
+				<tbody>
+				{% for item in noten %}
+						<tr>
+							<td>{{ item.id }}</td>
+							<td>{{ item.matrikel }}</td>
+							<td>{{ item.klausur }}</td>
+                        	<td>{{ item.f1 }}</td>
+                        	<td>{{ item.f2 }}</td>
+                        	<td>{{ item.f3 }}</td>
+                        	<td>{{ item.f4 }}</td>
+                        	<td>{{ item.f5 }}</td>
+						</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	{% else %}
+		<p>
+		<h1>Leider keine Werte vorhanden!</h1>
+	{% endif %}
+{% endblock %}

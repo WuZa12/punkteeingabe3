@@ -1,0 +1,52 @@
+{% extends "template.html" %}
+{% block content %}
+	<h1>Anmeldungen</h1>
+	<form action="/anzeigen" method="POST">
+	<input type="hidden" name="id" value="{{ request.form.id }}">
+	</form>
+	{% if werte %}
+		<div class="table-responsive">
+			<table id="table1" class="display">
+				<thead>
+					<th>Datum</th>
+					<th>Matrikelnummer</th>
+					<th>Name</th>
+					<th>L&ouml;schen</th>
+				</thead>
+				<tbody>
+				{% for item in werte %}
+						<tr>
+							<td>{{ item.date }}</td>
+							<td>{{ item.matnmr }}</td>
+							<td>{{ item.name }}</td>
+							<td>									
+									<form class="bootbutton" title="L&ouml;schen" action="/anmeldungloeschen" method="POST">
+										<input type="hidden" name="id" value="{{ item.idAnmeldung }}">
+											<button type="submit" class="btn btn-danger">
+												<i class="glyphicon glyphicon-remove"></i>
+											L&ouml;schen
+											</button>
+										</input>
+									</form>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							</td>
+						</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+			<p>es haben sich {{ zaehler }} studenten angemeldet.
+		</div>
+	{% else %}
+		<p>
+		<h1>Leider keine Werte vorhanden!</h1>
+	{% endif %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#table1').dataTable( {
+				"language": {
+					"url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
+				}
+			} );
+		} );
+	</script>
+{% endblock %}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hochschule Heilbronn</title>
+
+	<!-- Bootstrap -->
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <link href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.css" rel="stylesheet" media="screen">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<link href="/static/css/bootstrap.css" rel="stylesheet" media="screen">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src"h=ttps://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<link rel="Shortcut Icon" href="/HSHNPage-theme/images/favicon.ico">
+  </head>
+  
+ <body>
+ <div class="ausgabe">
+	 <div class="header">
+	 </div>
+	 <div class="header2">
+	 </div>
+ <div class="page">
+	<div class="page-header">
+		<div class="headerimage" style="background-image=/static/Fotoleiste.gif">
+			<a href="/"><img class="headerlogo"></img></a>
+			<div class="headerheader">
+				<p><b>Willkommen bei WIN</b></p>
+			</div>
+		</div>
+	</div>
+
+<div class="container-fluid">
+	<div class="col-xs-12 navbar-default">
+		<button href="#yo" id="yo" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsed-navigation">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="glyphicon glyphicon-align-justify"></span>
+				<span class="navmenu">Menu</span>
+		</button>
+	</div>
+</div>
+<div class="container-fluid">
+		<div class="row col-md-3 col-lg-3">
+			<div class="collapse navbar-collapse" id="collapsed-navigation">
+				<div class="navbar-inverse">
+					<ul class="nav">
+						<li><a href="/maskeeingabe"> - eingabe - </a></li>
+                        <li><a href="/alleNoten"> - Noten - </a></li>
+
+					</ul>
+				</div>
+			</div><!-- /.navbar-collapse -->
+		</div>
+
+<div class="col-xs-12 col-md-9 col-lg-9">
+<div class="jumbotron">
+		{% block content %}
+		{% endblock %}
+</div>
+</div>
+	<div class="col-xs-12" style="background-color: #505050;">
+	
+	<button href="#yo2" id="yo2" type="button" class="navbar-toggle text-primary" data-toggle="collapse" data-target="#collapsed-pills">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="glyphicon glyphicon-align-justify"></span>
+			<span class="navmenu">Links</span>
+		</button>
+		
+		</div>
+	<div class="col-xs-12">
+		<div style="padding-right: 0px;" class="collapse navbar-collapse" id="collapsed-pills">
+		<ul class="nav navbar-yo nav-pills">
+
+		</ul> 
+	</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
